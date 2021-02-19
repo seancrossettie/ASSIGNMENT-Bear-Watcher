@@ -56,13 +56,14 @@ const createForm = () => {
                           </div>
                           <div class="mb-3">
                             <label for="imgURL" class="form-label">Image URL</label>
-                            <input type="url" class="form-control" id="newImgUrl" placeholder="URL" required/>
+                            <input type="url" class="form-control" id="newImgUrl" placeholder="URL">
                           </div>
-                            <button type="submit" class="btn btn-light" id="createBearBtn">Track Bear</button>
+                            <button type="submit" class="btn btn-light">Track Bear</button>
                         </form>
                       </div>`;
+
   printToDom('#form', formString);
-  document.querySelector('#createBearBtn').addEventListener('submit', createBear);
+  document.querySelector('form').addEventListener('submit', createBear);
 };
 
 // Untracks bears when you click "Untrack Me" button on bear card
