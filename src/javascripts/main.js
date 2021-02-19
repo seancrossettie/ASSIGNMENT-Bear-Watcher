@@ -28,7 +28,7 @@ const printBearCards = (bearArr) => {
 };
 
 // Creates bear object and pushes new bear into "bearArray"
-const createBear = () => {
+const createBear = (e) => {
   const name = document.querySelector('#newBearName').value;
   const imgUrl = document.querySelector('#newImgUrl').value;
   const fishCaught = 0;
@@ -43,6 +43,7 @@ const createBear = () => {
   bearArray.push(newBear);
   printBearCards(bearArray);
   document.querySelector('form').reset();
+  e.preventDefault();
 };
 
 // Creates form to input new bears upon loading page
@@ -56,13 +57,14 @@ const createForm = () => {
                           </div>
                           <div class="mb-3">
                             <label for="imgURL" class="form-label">Image URL</label>
-                            <input type="url" class="form-control" id="newImgUrl" placeholder="URL" required/>
+                            <input type="url" class="form-control" id="newImgUrl" placeholder="URL">
                           </div>
-                            <button type="submit" class="btn btn-light" id="createBearBtn">Track Bear</button>
+                            <button type="submit" class="btn btn-light">Track Bear</button>
                         </form>
                       </div>`;
+
   printToDom('#form', formString);
-  document.querySelector('#createBearBtn').addEventListener('submit', createBear);
+  document.querySelector('form').addEventListener('submit', createBear);
 };
 
 // Untracks bears when you click "Untrack Me" button on bear card
@@ -78,17 +80,9 @@ const untrackBear = (e) => {
   printBearCards(bearArray);
 };
 
-// Tracks fishing info upon form select
-// const updateFishingInfo = () => {
-//   if (document.querySelector('#fishForm').value === 'caught') {
-//     console.warn('caught a fish');
-//   }
-// };
-
 // Button events function
 function buttonEvents() {
   document.querySelector('#river').addEventListener('click', untrackBear);
-  // document.querySelector('#river').addEventListener('click', updateFishingInfo);
 }
 
 // init function
