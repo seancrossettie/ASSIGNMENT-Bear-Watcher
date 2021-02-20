@@ -1,10 +1,10 @@
 import '../styles/main.scss';
 import createForm from './components/createForm';
-import { untrackBear } from './helpers/data/bearData';
+import { cardButtonEvents } from './helpers/data/bearData';
 
 // Button events function
 function buttonEvents() {
-  document.querySelector('#river').addEventListener('click', untrackBear);
+  document.querySelector('#river').addEventListener('click', cardButtonEvents);
 }
 
 // init function
