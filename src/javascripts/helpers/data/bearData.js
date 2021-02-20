@@ -13,7 +13,10 @@ const printBearCards = (bearArr) => {
                               <div class="card-body">
                                 <h5 class="card-title">${bear.name}</h5>
                                 <p class="card-text">You are now tracking this bear.</p>
-                                <a href="#" type="button" class="btn btn-danger" id="${i}">Untrack Me</a>
+                                <button type="button" class="btn btn-dark" id="fishAttempt">Fishing attempt</button>
+                                <p class="card-text">Fishing Attempt: ${bear.fishAttempt}</p>
+                                <p class="card-text">Fish Caught: ${bear.fishCaught}</p>
+                                <button type="button" class="btn btn-danger" id="${i}">Untrack Me</button>
                               </div>
                             </div>`;
   });
@@ -40,17 +43,20 @@ const createBear = (e) => {
   e.preventDefault();
 };
 
-// Untracks bears when you click "Untrack Me" button on bear card
-const untrackBear = (e) => {
-  e.preventDefault();
-
+// Adds fishing event to bear objects
+const cardButtonEvents = (e) => {
   const targetId = e.target.id;
   const targetType = e.target.type;
 
-  if (targetType === 'button') {
+  if (targetType === 'button' && targetId === 'fishAttempt') {
+    for (let i = 0; i < bearArray.length; i += 1) {
+      bearArray[i].fishAttempt += 1;
+      printBearCards(bearArray);
+    }
+  } else if (targetType === 'button') {
     bearArray.splice(targetId, 1);
+    printBearCards(bearArray);
   }
-  printBearCards(bearArray);
 };
 
-export { createBear, untrackBear };
+export { createBear, cardButtonEvents };
