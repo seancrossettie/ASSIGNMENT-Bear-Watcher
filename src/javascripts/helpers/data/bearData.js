@@ -71,4 +71,9 @@ const cardButtonEvents = (e) => {
   }
 };
 
-export { createBear, cardButtonEvents };
+// Button events function
+function buttonEvents() {
+  document.querySelector('#river').addEventListener('click', cardButtonEvents);
+}
+
+export { createBear, buttonEvents };
