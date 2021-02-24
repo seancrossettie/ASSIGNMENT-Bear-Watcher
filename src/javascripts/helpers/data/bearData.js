@@ -33,8 +33,8 @@ const createBear = (e) => {
   const imgUrl = document.querySelector('#newImgUrl').value;
   const fishCaught = 0;
   const fishAttempt = 0;
-  const timeAttempt = '';
-  const timeSucceed = '';
+  const timeAttempt = [];
+  const timeSucceed = [];
   const newBear = {
     name,
     imgUrl,
