@@ -8,20 +8,20 @@ const printBearCards = (bearArr) => {
   let bearCardString = '';
 
   bearArr.forEach((bear, i) => {
-    bearCardString += `<div class="card m-4" style="width: 18rem; height: 18rem;" id="${i}">
-                            <img src="${bear.imgUrl}" class="card-img-top" alt="${bear.imgUrl}">
-                              <div class="card-body">
-                                <h5 class="card-title">${bear.name}</h5>
-                                <p class="card-text">You are now tracking this bear.</p>
-                                <button type="button" class="btn btn-dark" id="fishAttempt-${i}">Fishing attempt</button>
-                                <p class="card-text">Fishing Attempt: ${bear.fishAttempt}</p>
-                                <p class="card-text">Time: ${bear.timeAttempt}</p>
-                                <button type="button" class="btn btn-dark" id="fishSucceed-${i}">Fishing success</button>
-                                <p class="card-text">Fish Caught: ${bear.fishCaught}</p>
-                                <p class="card-text">Time: ${bear.timeSucceed}</p>
-                                <button type="button" class="btn btn-danger" id="${i}">Untrack Me</button>
-                              </div>
-                            </div>`;
+    bearCardString += `<div class="card m-5" style="width: 18rem; height: 18rem;" id="${i}">
+                          <h5 class="card-title m-3">${bear.name}</h5>
+                          <img src="${bear.imgUrl}" class="card-img-top" alt="${bear.imgUrl}">
+                        <div class="card-body">
+                          <p class="card-text">${bear.name} likes to eat fish.</p>
+                          <button type="button" class="btn btn-dark" id="fishAttempt-${i}">Fishing attempt</button>
+                          <p class="card-text">Fishing Attempts: ${bear.fishAttempt}</p>
+                          <p class="card-text">Time: ${bear.timeAttempt}</p>
+                          <button type="button" class="btn btn-dark" id="fishSucceed-${i}">Fishing success</button>
+                          <p class="card-text">Fish Caught: ${bear.fishCaught}</p>
+                          <p class="card-text">Time: ${bear.timeSucceed}</p>
+                          <button type="button" class="btn btn-danger" id="${i}">Untrack Me</button>
+                        </div>
+                      </div>`;
   });
 
   printToDom('#river', bearCardString);
@@ -33,8 +33,8 @@ const createBear = (e) => {
   const imgUrl = document.querySelector('#newImgUrl').value;
   const fishCaught = 0;
   const fishAttempt = 0;
-  const timeAttempt = [];
-  const timeSucceed = [];
+  const timeAttempt = Date();
+  const timeSucceed = Date();
   const newBear = {
     name,
     imgUrl,
