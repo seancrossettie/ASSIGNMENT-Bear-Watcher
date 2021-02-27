@@ -18,5 +18,7 @@ $ sudo npm install
 $ npm start
 ```
 ## Sreenshots
+<img width="1792" alt="Screen Shot 2021-02-26 at 8 52 17 PM" src="https://user-images.githubusercontent.com/76828201/109373758-7afff180-7876-11eb-805d-cbd282b16e5b.png">
+<img width="1792" alt="Screen Shot 2021-02-26 at 8 52 26 PM" src="https://user-images.githubusercontent.com/76828201/109373759-7dfae200-7876-11eb-844c-be989586daac.png">
 
 ## Loom Video 
